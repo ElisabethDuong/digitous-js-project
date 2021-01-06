@@ -21,53 +21,58 @@ var rover = {
     x: 0,
     y: 0,
 };
-console.log(rover.direction);
+
 
 // 02 
 function turnLeft(rover) {
-
     if (rover.direction === "N") {
         rover.direction = "W";
-        console.log(rover);
+        console.log("direction NW", rover.direction);
     } else if (rover.direction === "W") {
         rover.direction = "S";
+        console.log(rover)
     } else if (rover.direction === "S") {
         rover.direction = "E";
-    } else rover.direction = "N";
-
+        console.log(rover)
+    } else {
+        rover.direction = "S";
+        console.log(rover);
+    }
     console.log(rover);
 }
-turnLeft(rover);
+
 
 
 function turnRight(rover) {
 
     if (rover.direction === "N") {
         rover.direction = "E";
-        console.log(rover);
+        console.log("Direction NE", rover.direction);
     } else if (rover.direction === "E") {
         rover.direction = "S";
     } else if (rover.direction === "S") {
         rover.direction = "W";
-    } else rover.direction = "N";
-    
+    } else {
+        rover.direction = "N"
+    };
+
     console.log(rover);
 }
 turnRight(rover);
 
 // 03 -  Le déplacement
 
-/*
 function moveForward(rover) {
-
-    for (var i = 0; i < grid.length; i++) {
-        for (var j = 0; j < grid[i].length; j++) {
-            rover.x += 1;
-        }
+    if (rover.direction === "N") {
+        rover.y = rover.y - 1;
+    } else if (rover.direction === "S") {
+        rover.y = rover.y + 1;
+    } else if (rover.direction === "E") {
+        rover.x = rover.x + 1;
+    } else {
+        rover.x = rover.x - 1;
     }
-    //rover.y;
+
     console.log(rover)
 }
 moveForward(rover);
-
-*/
