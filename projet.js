@@ -25,24 +25,23 @@ console.log(rover.direction);
 
 // 02 
 function turnLeft(rover) {
-    /*rover.direction = "N";
-    console.log(rover);
-    */
+
     if (rover.direction === "N") {
         rover.direction = "W";
         console.log(rover);
-    }
-    if (rover.direction === "W") {
-        rover.direction = "S"
-    }
+    } else if (rover.direction === "W") {
+        rover.direction = "S";
+    } else if (rover.direction === "S") {
+        rover.direction = "E";
+    } else rover.direction = "N";
+
     console.log(rover);
 }
 turnLeft(rover);
 
 
 function turnRight(rover) {
-    // rover.direction = "N";
-    // console.log(rover);
+
     if (rover.direction === "N") {
         rover.direction = "E";
         console.log(rover);
