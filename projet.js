@@ -45,10 +45,12 @@ function turnRight(rover) {
     if (rover.direction === "N") {
         rover.direction = "E";
         console.log(rover);
-    }
-    if (rover.direction === "E") {
+    } else if (rover.direction === "E") {
         rover.direction = "S";
-    }
+    } else if (rover.direction === "S") {
+        rover.direction = "W";
+    } else rover.direction = "N";
+    
     console.log(rover);
 }
 turnRight(rover);
