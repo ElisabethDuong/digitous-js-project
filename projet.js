@@ -68,7 +68,7 @@ turnLeft(rover);
 // 03 - Keys x y 
 
 
-// 04 -  Function Forward
+// 04 - Function Forward
 
 function moveForward(rover) {
     if (rover.direction === "N") {
@@ -88,3 +88,28 @@ function moveForward(rover) {
 }
 
 moveForward(rover);
+
+// 05 - L'historique
+
+function pilotRover(lrf) {
+
+    for (var i = 0; i < lrf.length; i++) {
+
+        var movement = lrf.charAt(i);
+        console.log("generalMove", movement);
+
+        if (movement === "l") {
+            turnLeft(rover);
+            console.log("Turn to the left:", movement);
+        } else if (movement === "r") {
+            turnRight(rover);
+            console.log("Turn to the right:", movement);
+        } else if (movement === "f") {
+            moveForward(rover);
+            console.log("Move forward:", movement);
+        }
+    }
+
+};
+
+pilotRover("lrf")
