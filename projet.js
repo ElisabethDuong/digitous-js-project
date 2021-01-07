@@ -66,7 +66,7 @@ turnRight(rover);
 turnLeft(rover);
 
 
-// 03 - Keys x y 
+// 03 - Keys x y (cf // 01)
 
 
 // 04 - Function Forward
@@ -121,14 +121,7 @@ function pilotRover(lrf) {
 pilotRover("lrf");
 
 
-// 06 - Coordinates History
+// 06 - Coordinates History (cf // 04)
 
-// on veut pusher toutes les coordonnées x, y chaque fois avant d'avancer
 
-// var roverTracking = rover.travelLog;
-
-// for (var i = 0; i < roverTracking.length; i++) {
-//     var coordinates = rover.travelLog[i];
-//     roverTracking.push(coordinates);
-// }
-// console.log(roverTracking);
+// 08 - Pilot With Prompt
