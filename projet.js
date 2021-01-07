@@ -20,6 +20,7 @@ var rover = {
     direction: "N",
     x: 0,
     y: 0,
+    travelLog: [],
 };
 
 
@@ -28,18 +29,18 @@ var rover = {
 function turnLeft(rover) {
     if (rover.direction === "N") {
         rover.direction = "W";
-        console.log("Direction NW", rover.direction);
+        console.log("Direction NW:", rover.direction);
     } else if (rover.direction === "W") {
         rover.direction = "S";
-        console.log("Direction WS", rover.direction);
+        console.log("Direction WS:", rover.direction);
     } else if (rover.direction === "S") {
         rover.direction = "E";
-        console.log("Direction SE", rover.direction);
-    } else {
+        console.log("Direction SE:", rover.direction);
+    } else if (rover.direction === "E") {
         rover.direction = "N";
-        console.log("Direction EN", rover.direction);
+        console.log("Direction EN:", rover.direction);
     }
-    console.log(rover);
+    console.log("ligne mystère", rover);
 };
 
 
@@ -47,16 +48,16 @@ function turnRight(rover) {
 
     if (rover.direction === "N") {
         rover.direction = "E";
-        console.log("Direction NE", rover.direction);
+        console.log("Direction NE:", rover.direction);
     } else if (rover.direction === "E") {
         rover.direction = "S";
-        console.log("Direction ES", rover.direction);
+        console.log("Direction ES:", rover.direction);
     } else if (rover.direction === "S") {
         rover.direction = "W";
-        console.log("Direction SW", rover.direction);
-    } else {
+        console.log("Direction SW:", rover.direction);
+    } else if (rover.direction === "W") {
         rover.direction = "N";
-        console.log("Direction WN", rover.direction);
+        console.log("Direction WN:", rover.direction);
     };
     console.log(rover);
 };
@@ -71,25 +72,31 @@ turnLeft(rover);
 // 04 - Function Forward
 
 function moveForward(rover) {
+
+    // rover.travelLog.push("[" + rover.x + "," + rover.y + "]");
+    rover.travelLog.push(`[${rover.x}, ${rover.y}]`);
+
+
     if (rover.direction === "N") {
         rover.y = rover.y - 1;
-        console.log("Forward N", rover.y);
+        console.log("Forward N:", rover.y);
     } else if (rover.direction === "S") {
         rover.y = rover.y + 1;
-        console.log("Forward S", rover.y);
+        console.log("Forward S:", rover.y);
     } else if (rover.direction === "E") {
         rover.x = rover.x + 1;
-        console.log("Forward E", rover.x);
-    } else {
+        console.log("Forward E:", rover.x);
+    } else if (rover.direction === "W") {
         rover.x = rover.x - 1;
-        console.log("Forward W", rover.x);
+        console.log("Forward W:", rover.x);
     }
     console.log(rover)
 }
 
 moveForward(rover);
 
-// 05 - L'historique
+
+// 05 - Command
 
 function pilotRover(lrf) {
 
@@ -109,7 +116,19 @@ function pilotRover(lrf) {
             console.log("Move forward:", movement);
         }
     }
-
 };
 
-pilotRover("lrf")
+pilotRover("lrf");
+
+
+// 06 - Coordinates History
+
+// on veut pusher toutes les coordonnées x, y chaque fois avant d'avancer
+
+// var roverTracking = rover.travelLog;
+
+// for (var i = 0; i < roverTracking.length; i++) {
+//     var coordinates = rover.travelLog[i];
+//     roverTracking.push(coordinates);
+// }
+// console.log(roverTracking);
