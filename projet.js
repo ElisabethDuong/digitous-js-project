@@ -1,5 +1,6 @@
 // MARS ROVER 
-
+var prompt = require("prompt");
+prompt.start();
 
 // 01 - Global Variables
 
@@ -22,6 +23,7 @@ var rover = {
     y: 0,
     travelLog: [],
 };
+
 
 
 // 02 - Functions Left Right
@@ -76,6 +78,10 @@ function moveForward(rover) {
     // rover.travelLog.push("[" + rover.x + "," + rover.y + "]");
     rover.travelLog.push(`[${rover.x}, ${rover.y}]`);
 
+    // if () {
+
+    // }
+
 
     if (rover.direction === "N") {
         rover.y = rover.y - 1;
@@ -124,4 +130,12 @@ pilotRover("lrf");
 // 06 - Coordinates History (cf // 04)
 
 
-// 08 - Pilot With Prompt
+// 08 - Pilot With prompt
+
+prompt.get(['lrf'], function(err, result) {
+    //
+    pilotRover(result.lrf);
+    //
+    console.log('Command-line input received:');
+    console.log('  lrf: ' + result.lrf);
+});
